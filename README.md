@@ -14,12 +14,27 @@ It combines productivity and well-being tools into a single platform, designed t
 * Scroll through posts from other users.
 * Minimal, calming UI designed to reduce distraction.
 
-### ✅ To-Do Tasks
+### ✅ To-Do Tasks & AI Assistant
 
-* Add, edit, and complete daily tasks.
-* Task priority indicators (high, medium, low).
-* Energy-level tagging for better time management.
-* Built-in **Pomodoro Timer** to support focus sessions.
+Create, edit, complete, and reset daily tasks.
+
+Assign priority levels (high, medium, low).
+
+Tag energy level to better schedule tasks.
+
+Integrated Pomodoro timer for deep focus work.
+
+AI Task Assistant (Gemini-powered):
+
+Generates subtasks, schedules, and motivational suggestions.
+
+Example: “Finish assignment” → AI provides 3-step action plan.
+
+Voice Activation: “Hey VLINKS”
+
+Hands-free control with a hotword listener.
+
+Add new tasks or ask the AI assistant via voice.
 
 ### 🎵 Music Player
 
