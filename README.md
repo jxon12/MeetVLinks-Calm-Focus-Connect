@@ -1,54 +1,74 @@
-# VLINKS
+# VLINKS Track2 Student Lifestyle (Mental Health Support for students)
 
-**VLINKS** is a mindfulness-oriented progressive web application built with **React + Vite**.
-It provides users with a calming digital space to manage tasks, share reflections, listen to music, and explore interactive features like Tarot-style self-reflection.
-
-The goal of the project is to combine productivity and mental wellness into a single simple, mobile-friendly app.
+**VLINKS** is a mindfulness-oriented progressive web application built with **React + Vite + Supabase**.
+It combines productivity and well-being tools into a single platform, designed to help users stay calm, focused, and connected.
 
 ---
 
-## ✨ Features
+## ✨ Core Features
 
-* **Mindful Feed**
+### 📰 Mindful Feed
 
-  * Post and browse short reflections or photos.
-  * Clean, distraction-free UI.
+* Share short reflections, photos, and thoughts.
+* Scroll through posts from other users.
+* Minimal, calming UI designed to reduce distraction.
 
-* **Task Manager**
+### ✅ To-Do Tasks
 
-  * Create, mark complete, and reset tasks.
-  * Prioritize tasks visually.
+* Add, edit, and complete daily tasks.
+* Task priority indicators (high, medium, low).
+* Energy-level tagging for better time management.
+* Built-in **Pomodoro Timer** to support focus sessions.
 
-* **Music Player**
+### 🎵 Music Player
 
-  * Minimal player UI with play, pause, skip.
-  * Safe-area-aware design for mobile devices.
+* Play/pause, skip forward/back, seek inside tracks.
+* Responsive UI designed for mobile.
+* Safe-area padding so controls are not blocked by overlays.
 
-* **Tarot / Reflection Cards**
+### 🔮 Tarot & Reflection
 
-  * Choose cards for self-reflection.
-  * Integrated with Google Gemini API for AI-generated readings.
-  * Fallback local card meanings if API quota is exceeded.
+* Select a **category** (Career, Relationship, Interpersonal, Self-growth).
+* Enter a **personal question** or concern.
+* Pick **5 cards** out of 24 unique images.
+* **AI Reading (Gemini API)**: 3-6 sentence warm reading + 2 practical suggestions + disclaimer.
+* **Fallback Reading**: If Gemini quota is exhausted, local card meanings are combined into a short reflection.
 
-* **Safety Net**
+### 🛡️ Safety Net
 
-  * If risky input is detected, app displays crisis resources (e.g. Befrienders KL).
+* If user input contains sensitive/self-harm words, the app displays:
 
-* **PWA (Progressive Web App)**
+  * A clear safety notice.
+  * Crisis hotline resources (e.g. Befrienders KL: 03-7627 2929).
+* Users must acknowledge before returning to the app.
 
-  * Installable on mobile or desktop.
-  * Offline support via service worker.
+### 📅 Calendar & Gratitude Journal
+
+* Daily mood tracker (😀🙂😐🙁😢).
+* Gratitude journal: add multiple notes per day.
+* Stored locally in browser (with option to sync to Supabase if enabled).
+
+### 📊 Dashboard & Insights
+
+* View simple charts of productivity, mood, and gratitude over time.
+* Designed for mindful reflection, not judgment.
+
+### 📱 Progressive Web App (PWA)
+
+* Installable on desktop and mobile.
+* Offline caching via service worker.
+* App icon, splash screen, and standalone mode.
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **React 18** with TypeScript
-* **Vite** as bundler
-* **Tailwind CSS** for styling
-* **Supabase** for backend (authentication, database, storage)
-* **Google Gemini API** for AI-generated readings
-* **Vite Plugin PWA** for offline and installable support
+* **React 18 + TypeScript**
+* **Vite** bundler
+* **TailwindCSS** styling
+* **Supabase** (auth, database, storage)
+* **Google Gemini API** (for AI Tarot readings)
+* **Vite Plugin PWA** (offline & installable support)
 
 ---
 
@@ -63,24 +83,23 @@ cd Meet-VLinks
 
 ### 2. Install dependencies
 
-Make sure you have **Node.js ≥ 18** installed. Then run:
+Requires **Node.js v18+**.
 
 ```bash
 npm install
 ```
 
-This installs all required packages, including:
+This installs all dependencies:
 
-* `react`, `react-dom`
-* `@vitejs/plugin-react`
-* `vite`
-* `vite-plugin-pwa`
-* `tailwindcss`, `postcss`, `autoprefixer`
-* `@supabase/supabase-js`
+* React, React DOM
+* Vite + @vitejs/plugin-react
+* vite-plugin-pwa
+* Supabase JS SDK
+* Tailwind, PostCSS, Autoprefixer
 
-### 3. Configure environment variables
+### 3. Set environment variables
 
-Create a `.env` file in the project root with the following keys:
+Create a `.env` file in the project root:
 
 ```env
 VITE_SUPABASE_URL=your-supabase-url
@@ -88,8 +107,8 @@ VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
 VITE_GEMINI_API_KEY=your-gemini-api-key
 ```
 
-* **Supabase**: Create a project at [supabase.com](https://supabase.com), copy the API URL and anon key.
-* **Gemini API**: Enable the Generative Language API on Google Cloud and create an API key.
+* Get **Supabase URL & anon key** from your Supabase project.
+* Enable **Google Gemini API** in Google Cloud and copy the API key.
 
 ### 4. Run in development
 
@@ -97,11 +116,7 @@ VITE_GEMINI_API_KEY=your-gemini-api-key
 npm run dev
 ```
 
-Visit the app at:
-
-```
-http://localhost:5173
-```
+Open [http://localhost:5173](http://localhost:5173)
 
 ### 5. Build for production
 
@@ -109,9 +124,9 @@ http://localhost:5173
 npm run build
 ```
 
-The output will be in the `/dist` folder.
+Output is in `/dist`.
 
-To preview locally:
+Preview locally:
 
 ```bash
 npm run preview
@@ -123,67 +138,85 @@ npm run preview
 
 ### GitHub Pages
 
-* Set `vite.config.ts` → `base: '/YourRepoName/'`.
-* Push to GitHub and enable Pages.
+* Set `vite.config.ts` → `base: '/Meet-VLinks/'`.
+* Push to repo, enable GitHub Pages → Deploy from branch `/docs` or `/dist`.
 
-### Netlify / Vercel (Recommended)
+### Netlify (recommended)
 
-* No config changes needed (`base: '/'`).
-* Connect repo → set build command `npm run build` and publish directory `dist/`.
-* For Netlify, add a `public/_redirects` file:
+* Build command: `npm run build`
+* Publish directory: `dist`
+* Add `public/_redirects` file with:
 
   ```
   /* /index.html 200
   ```
 
+### Vercel
+
+* Build command: `npm run build`
+* Output directory: `dist`
+
 ---
 
-## 📖 Usage Guide
+## 📖 User Guide
 
-1. **Mindful Feed**
+1. **Sign in / Sign up**
 
-   * Post reflections or photos.
-   * Scroll to view others’ posts.
+   * Uses Supabase authentication.
 
-2. **Tasks**
+2. **Mindful Feed**
 
-   * Add a new to-do.
-   * Mark tasks as complete.
-   * Reset list when finished.
+   * Post short reflections.
+   * Browse and like other posts.
 
-3. **Music Player**
+3. **Tasks & Pomodoro**
 
-   * Open “Music” tab.
-   * Play/pause track, skip forward/back.
+   * Create new tasks with priority.
+   * Start Pomodoro focus sessions.
+   * Reset tasks daily.
 
-4. **Tarot Reflection**
+4. **Music**
 
-   * Choose a category (e.g. Career, Self-growth).
-   * Enter a personal question.
-   * Select 5 cards → receive AI-based or fallback reading.
+   * Open Music tab → play/pause/skip tracks.
+   * Works both on desktop and mobile.
 
-5. **Safety Net**
+5. **Tarot Reflection**
 
-   * If sensitive keywords are detected, a safety message and hotline resources will be displayed.
+   * Select category + enter your question.
+   * Pick 5 cards → AI reading (Gemini).
+   * Fallback to local meanings if API quota is reached.
 
-6. **PWA**
+6. **Safety Net**
 
-   * Install app to home screen (mobile) or desktop (Chrome/Edge).
+   * Triggered if unsafe/self-harm words appear in input.
+   * Provides hotline info + requires acknowledgement.
+
+7. **Calendar & Gratitude**
+
+   * Track daily mood with emoji.
+   * Add gratitude notes per day.
+   * Stored locally (with option to sync).
+
+8. **PWA**
+
+   * Install via browser (“Add to Home Screen”).
    * Works offline with cached assets.
 
 ---
 
 ## 📌 Notes for Judges
 
-* Works best in **Chrome / Edge / Safari (latest)**.
-* Fully mobile-responsive.
-* Offline caching supported, but AI features require internet.
-* Crisis safety feature demonstrates ethical design consideration.
+* Chrome / Edge recommended for best PWA experience.
+* Gemini API must be configured for Tarot AI to function.
+* Without Gemini API, fallback local reading still works.
+* Supabase is optional: feed, posts, and tasks require backend; local-only mode still supports Tarot, Music, and Gratitude Journal.
 
 ---
 
 ## 📄 License
 
-This project is for 2025 CodeNection 2025
+This project is provided for 2025 CodeNection Competition.
 
 
+
+要不要我帮你把这个 README 改成 **Markdown 文件格式（带标题、表格、代码块等）**，你可以直接放进 `README.md` 上传到 GitHub？
