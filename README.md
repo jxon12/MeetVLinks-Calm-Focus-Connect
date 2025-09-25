@@ -1,4 +1,5 @@
-# VLINKS Track2 Student Lifestyle (Mental Health Support for students)
+# VLINKS 
+Track2 Student Lifestyle (Mental Health Support for students)
 
 **VLINKS** is a mindfulness-oriented progressive web application built with **React + Vite + Supabase**.
 It combines productivity and well-being tools into a single platform, designed to help users stay calm, focused, and connected.
