@@ -16,25 +16,25 @@ It combines productivity and well-being tools into a single platform, designed t
 
 ### ✅ To-Do Tasks & AI Assistant
 
-Create, edit, complete, and reset daily tasks.
+* Create, edit, complete, and reset daily tasks.
 
-Assign priority levels (high, medium, low).
+* Assign priority levels (high, medium, low).
 
-Tag energy level to better schedule tasks.
+* Tag energy level to better schedule tasks.
 
-Integrated Pomodoro timer for deep focus work.
+* Integrated Pomodoro timer for deep focus work.
 
-AI Task Assistant (Gemini-powered):
+* AI Task Assistant (Gemini-powered):
 
-Generates subtasks, schedules, and motivational suggestions.
+* Generates subtasks, schedules, and motivational suggestions.
 
 Example: “Finish assignment” → AI provides 3-step action plan.
 
-Voice Activation: “Hey VLINKS”
+* Voice Activation: “Hey VLINKS”
 
-Hands-free control with a hotword listener.
+* Hands-free control with a hotword listener.
 
-Add new tasks or ask the AI assistant via voice.
+* Add new tasks or ask the AI assistant via voice.
 
 ### 🎵 Music Player
 
