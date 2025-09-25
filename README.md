@@ -1,9 +1,3 @@
-Got it — you want a **professional README.md** in English that explains exactly how to install, run, and use your project (including all npm dependencies and the features you’ve built, like Feed, Tasks, Tarot, Music, etc.), so a judge or reviewer can quickly set it up and understand what it does.
-
-Here’s a full draft:
-
----
-
 # VLINKS
 
 **VLINKS** is a mindfulness-oriented progressive web application built with **React + Vite**.
@@ -190,6 +184,6 @@ npm run preview
 
 ## 📄 License
 
-This project is for educational and demo purposes.
+This project is for 2025 CodeNection 2025
 
 
